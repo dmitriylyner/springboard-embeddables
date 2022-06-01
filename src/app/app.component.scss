@@ -1,0 +1,44 @@
+:host::ng-deep {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+
+    mo-zone {
+      width: auto;
+      &.facets {
+          width: auto;
+      }
+    }
+    lw-searchahead {
+        margin-bottom: 16px;
+    }
+    .content {
+      display: flex;
+      lw-facets {
+        width: 350px;
+        max-width: 350px;
+      }
+      lw-results,
+      lw-facets {
+        flex: 1;
+        overflow: hidden;
+      }
+    }
+  
+    @media (max-width: 1024px) {
+      mo-typeahead-template mo-search-bar {
+        width: 100%;
+      }
+      .content {
+        flex-direction: column;
+        lw-results,
+        lw-facets {
+          flex: 0;
+          width: 100%;
+          max-width: 100%;
+          margin-bottom: 16px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
