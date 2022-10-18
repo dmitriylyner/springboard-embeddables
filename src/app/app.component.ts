@@ -9,6 +9,30 @@ export class AppComponent {
   title = 'springboard-embeddables';
   searchStore = (window as any).getSearchStore();
 
+  searchaheadConfig = {
+    limit: 5,
+    fieldList: ['document.title', 'document.thumbnailImage']
+  };
+
+  breadcrumbsConfig = {
+    facetLabels: {
+      type: 'Document Type',
+      datasourceLabels: 'Category'
+    }
+  };
+
+  facetsConfig = {
+    facets: ['type', 'datasourceLabels'],
+    facetLabels: {
+      type: 'Document Type',
+      datasourceLabels: 'Category'
+    }
+  };
+
+  resultsConfig = {
+    fieldList: ['document.title', 'document.url', 'document.description', 'document.thumbnailImage']
+  };
+
   async query(event: any) {
     const detail = event.detail;
     console.log(detail);

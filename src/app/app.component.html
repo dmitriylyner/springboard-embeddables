@@ -1,7 +1,14 @@
 <!-- <router-outlet></router-outlet> -->
-<lw-searchahead (query)="query($event)"></lw-searchahead>
-<lw-breadcrumbs></lw-breadcrumbs>
-<div class="content">
-  <lw-facets></lw-facets>
-  <lw-results></lw-results>
+<div class="header">
+  <div class="title">Search our website</div>
+  <lw-searchahead (query)="query($event)" [config]="searchaheadConfig"></lw-searchahead>
+  <lw-breadcrumbs [config]="breadcrumbsConfig">
+    <p class="hint">If you can't find what you need, please <a href="https://lucidworks.com/contact">contact us</a> and
+      we'll be happy to help!</p>
+  </lw-breadcrumbs>
+</div>
+<div class="main">
+  <lw-facets [config]="facetsConfig"> </lw-facets>
+  <lw-results [config]="resultsConfig">
+  </lw-results>
 </div>
